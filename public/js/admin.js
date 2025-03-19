@@ -1,3 +1,5 @@
+const backendBaseUrl = 'https://comp4537-project-backend-qnf6.onrender.com';
+
 const token = localStorage.getItem('token');
 if (!token) {
     window.location.href = '/';
@@ -9,7 +11,7 @@ if (!token) {
         window.location.href = '/story.html?unauthorized=true';
     } else {
         // Fetch API usage statistics
-        fetch('https://clownfish-app-mn8xw.ondigitalocean.app/COMP4537_project/api/stories/api-usage', {
+        fetch(`${backendBaseUrl}/api/users/api-usage`, {
             method: 'GET',
             headers: {
                 'Authorization': `Bearer ${token}`,

@@ -1,4 +1,4 @@
-const backendBaseUrl = 'https://clownfish-app-mn8xw.ondigitalocean.app/COMP4537_project';
+const backendBaseUrl = 'https://comp4537-project-backend-qnf6.onrender.com';
 
 // Check for unauthorized access
 const unauthorizedMessage = document.getElementById('unauthorizedMessage');
