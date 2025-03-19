@@ -21,6 +21,10 @@ if (storyForm) {
         if (!token) {
             alert('Please log in first');
             return;
+        } else {
+            const payload = JSON.parse(atob(token.split('.')[1]));
+            const user = payload;
+            console.log('User:', user);
         }
 
         const response = await fetch('http://localhost:5000/api/stories/generate-story', {
