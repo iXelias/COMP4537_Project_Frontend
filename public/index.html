@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login/Register</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Story Generator</h1>
+        <form id="loginForm">
+            <input type="email" id="email" placeholder="Email" required>
+            <div id="emailError" class="error"></div>
+            <input type="password" id="password" placeholder="Password" required>
+            <div id="passwordError" class="error"></div>
+            <button type="submit">Login</button>
+        </form>
+        <p id="toggleLink">Don't have an account? <a href="#" id="toggleForm">Register</a></p>
+        <div id="successMessage" class="success"></div>
+
+        <!-- Register Form (Hidden by Default) -->
+        <form id="registerForm" style="display: none;">
+            <input type="email" id="registerEmail" placeholder="Email" required>
+            <div id="registerEmailError" class="error"></div>
+            <input type="password" id="registerPassword" placeholder="Password" required>
+            <div id="registerPasswordError" class="error"></div>
+            <button type="submit">Register</button>
+        </form>
+    </div>
+    <script src="/js/index.js"></script>
+    <script src="/js/shared.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Story Generator</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Story Generator</h1>
+        <div id="unauthorizedMessage" class="error" style="display: none;">
+            You do not have permission to access the page you attempted to access.
+        </div>
+        <form id="storyForm">
+            <input type="text" id="prompt" placeholder="Enter story details" required>
+            <div id="promptError" class="error"></div>
+            <button type="submit">Generate Story</button>
+        </form>
+        <div id="storyOutput"></div>
+        <button id="logout">Logout</button>
+    </div>
+    <script src="/js/story.js"></script>
+    <script src="/js/shared.js"></script>
+</body>
+
+</html>
