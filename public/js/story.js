@@ -29,7 +29,7 @@ if (storyForm) {
             console.log('User:', user);
         }
 
-        const response = await fetch(`${backendBaseUrl}/api/users/generate-story`, {
+        const response = await fetch(`${backendBaseUrl}/api/stories/generate-story`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

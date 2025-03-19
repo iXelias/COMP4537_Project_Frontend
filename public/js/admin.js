@@ -11,7 +11,7 @@ if (!token) {
         window.location.href = '/story.html?unauthorized=true';
     } else {
         // Fetch API usage statistics
-        fetch(`${backendBaseUrl}/api/users/api-usage`, {
+        fetch(`${backendBaseUrl}/api/stories/api-usage`, {
             method: 'GET',
             headers: {
                 'Authorization': `Bearer ${token}`,
