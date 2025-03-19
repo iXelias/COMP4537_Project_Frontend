@@ -1,4 +1,4 @@
-const backendBaseUrl = 'https://comp4537-project-backend-qnf6.onrender.com';
+const backendBaseUrl = 'https://comp4537-project-backend-qnf6.onrender.com/COMP4537_project';
 
 // Check for unauthorized access
 const unauthorizedMessage = document.getElementById('unauthorizedMessage');

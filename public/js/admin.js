@@ -1,4 +1,4 @@
-const backendBaseUrl = 'https://comp4537-project-backend-qnf6.onrender.com';
+const backendBaseUrl = 'https://comp4537-project-backend-qnf6.onrender.com/COMP4537_project';
 
 const token = localStorage.getItem('token');
 if (!token) {
