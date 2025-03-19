@@ -27,7 +27,7 @@ if (storyForm) {
             console.log('User:', user);
         }
 
-        const response = await fetch('http://localhost:5000/api/stories/generate-story', {
+        const response = await fetch('https://clownfish-app-mn8xw.ondigitalocean.app/COMP4537_project/api/stories/generate-story', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

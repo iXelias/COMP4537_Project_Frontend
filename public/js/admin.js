@@ -9,7 +9,7 @@ if (!token) {
         window.location.href = '/story.html?unauthorized=true';
     } else {
         // Fetch API usage statistics
-        fetch('http://localhost:5000/api/stories/api-usage', {
+        fetch('https://clownfish-app-mn8xw.ondigitalocean.app/COMP4537_project/api/stories/api-usage', {
             method: 'GET',
             headers: {
                 'Authorization': `Bearer ${token}`,

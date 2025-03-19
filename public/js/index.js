@@ -10,7 +10,7 @@ if (loginForm) {
         document.getElementById('emailError').textContent = '';
         document.getElementById('passwordError').textContent = '';
 
-        const response = await fetch('http://localhost:5000/api/users/login', {
+        const response = await fetch('https://clownfish-app-mn8xw.ondigitalocean.app/COMP4537_project/api/users/login', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ email, password }),
@@ -48,7 +48,7 @@ if (registerForm) {
         document.getElementById('registerEmailError').textContent = '';
         document.getElementById('registerPasswordError').textContent = '';
 
-        const response = await fetch('http://localhost:5000/api/users/register', {
+        const response = await fetch('https://clownfish-app-mn8xw.ondigitalocean.app/COMP4537_project/api/users/register', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ email, password }),
@@ -79,9 +79,11 @@ if (toggleLink) {
         if (loginForm.style.display === 'none') {
             loginForm.style.display = 'block';
             registerForm.style.display = 'none';
+            toggleLink.innerHTML = 'Don\'t have an account? <a href="#" id="toggleForm">Register</a>';
         } else {
             loginForm.style.display = 'none';
             registerForm.style.display = 'block';
+            toggleLink.innerHTML = 'Already have an account? <a href="#" id="toggleForm">Login</a>';
         }
     });
 }
