@@ -1,3 +1,5 @@
+const backendBaseUrl = 'https://clownfish-app-mn8xw.ondigitalocean.app/COMP4537_project';
+
 // Check for unauthorized access
 const unauthorizedMessage = document.getElementById('unauthorizedMessage');
 if (unauthorizedMessage) {
@@ -27,7 +29,7 @@ if (storyForm) {
             console.log('User:', user);
         }
 
-        const response = await fetch('https://clownfish-app-mn8xw.ondigitalocean.app/COMP4537_project/api/stories/generate-story', {
+        const response = await fetch(`${backendBaseUrl}/api/users/generate-story`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

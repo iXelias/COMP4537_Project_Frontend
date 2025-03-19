@@ -1,3 +1,5 @@
+const backendBaseUrl = 'https://clownfish-app-mn8xw.ondigitalocean.app/COMP4537_project';
+
 // Login
 const loginForm = document.getElementById('loginForm');
 if (loginForm) {
@@ -10,7 +12,7 @@ if (loginForm) {
         document.getElementById('emailError').textContent = '';
         document.getElementById('passwordError').textContent = '';
 
-        const response = await fetch('https://clownfish-app-mn8xw.ondigitalocean.app/COMP4537_project/api/users/login', {
+        const response = await fetch(`${backendBaseUrl}/api/users/login`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ email, password }),
@@ -48,7 +50,7 @@ if (registerForm) {
         document.getElementById('registerEmailError').textContent = '';
         document.getElementById('registerPasswordError').textContent = '';
 
-        const response = await fetch('https://clownfish-app-mn8xw.ondigitalocean.app/COMP4537_project/api/users/register', {
+        const response = await fetch(`${backendBaseUrl}/api/users/register`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ email, password }),
