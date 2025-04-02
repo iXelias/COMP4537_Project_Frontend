@@ -4,8 +4,9 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    min-height: 100vh;
     margin: 0;
+    overflow-y: auto;
 }
 
 .container {
@@ -78,4 +79,53 @@ button:hover {
     background-color: #ffe6e6;
     border: 1px solid #ffcccc;
     border-radius: 4px;
+}
+
+/* Story Cards */
+.story-card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 15px;
+    background: white;
+}
+
+.story-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+button {
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.edit-btn {
+    background: #ffc107;
+}
+
+.delete-btn {
+    background: #dc3545;
+    color: white;
+}
+
+.save-btn {
+    background: #28a745;
+    color: white;
+}
+
+.cancel-btn {
+    background: #6c757d;
+    color: white;
+}
+
+.edit-form {
+    margin-top: 10px;
+}
+
+.edit-content {
+    width: 100%;
+    min-height: 100px;
+    margin-bottom: 10px;
 }

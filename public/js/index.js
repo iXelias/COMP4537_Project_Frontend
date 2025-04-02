@@ -1,4 +1,6 @@
-const backendBaseUrl = 'https://comp4537-project-backend-qnf6.onrender.com/COMP4537_project';
+// const backendBaseUrl = 'https://comp4537-project-backend-qnf6.onrender.com/COMP4537_project';
+const backendBaseUrl = 'http://localhost:5000/COMP4537_project';
+
 
 // Login
 const loginForm = document.getElementById('loginForm');
@@ -14,19 +16,17 @@ if (loginForm) {
 
         const response = await fetch(`${backendBaseUrl}/api/users/login`, {
             method: 'POST',
+            credentials: 'include',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ email, password }),
         });
 
         const data = await response.json();
         if (response.ok) {
-            const user = data.user;
-            localStorage.setItem('token', data.token);
-            localStorage.setItem('isAdmin', data.isAdmin); // Store isAdmin flag
             if (data.isAdmin) {
-                window.location.href = '/admin.html'; // Redirect admin users
+                window.location.href = '/admin.html';
             } else {
-                window.location.href = '/story.html'; // Redirect regular users
+                window.location.href = '/story.html';
             }
         } else {
             if (data.error.includes('password')) {
@@ -50,23 +50,29 @@ if (registerForm) {
         document.getElementById('registerEmailError').textContent = '';
         document.getElementById('registerPasswordError').textContent = '';
 
-        const response = await fetch(`${backendBaseUrl}/api/users/register`, {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ email, password }),
-        });
+        try {
+            const response = await fetch(`${backendBaseUrl}/api/users/register`, {
+                method: 'POST',
+                credentials: 'include',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ email, password }),
+            });
 
-        const data = await response.json();
-        if (response.ok) {
-            document.getElementById('successMessage').textContent = 'Registration successful!';
-            document.getElementById('registerForm').style.display = 'none'; // Hide the register form
-            document.getElementById('loginForm').style.display = 'block'; // Show the login form
-        } else {
-            if (data.error.includes('password')) {
-                document.getElementById('registerPasswordError').textContent = data.error;
+            const data = await response.json();
+            if (response.ok) {
+                document.getElementById('successMessage').textContent = 'Registration successful!';
+                document.getElementById('registerForm').style.display = 'none'; // Hide the register form
+                document.getElementById('loginForm').style.display = 'block'; // Show the login form
             } else {
-                document.getElementById('registerEmailError').textContent = data.error;
+                if (data.error.includes('password')) {
+                    document.getElementById('registerPasswordError').textContent = data.error;
+                } else {
+                    document.getElementById('registerEmailError').textContent = data.error;
+                }
             }
+        } catch (error) {
+            console.error('Registration failed:', error);
+            document.getElementById('registerEmailError').textContent = 'Registration failed. Please try again.';
         }
     });
 }

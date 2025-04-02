@@ -10,6 +10,13 @@
 
 <body>
     <div class="container">
+        <div id="api-usage">
+            <h3>API Usage</h3>
+            <div class="usage-bar">
+                <div class="used" id="used-bar"></div>
+            </div>
+            <p><span id="used-count">0</span>/<span id="total-count">20</span> requests used</p>
+        </div>
         <h1>Story Generator</h1>
         <div id="unauthorizedMessage" class="error" style="display: none;">
             You do not have permission to access the page you attempted to access.
@@ -20,6 +27,12 @@
             <button type="submit">Generate Story</button>
         </form>
         <div id="storyOutput"></div>
+        <div class="container">
+            <h1>My Stories</h1>
+            <div id="stories-list">
+                <!-- Stories will be dynamically inserted here -->
+            </div>
+        </div>
         <button id="logout">Logout</button>
     </div>
     <script src="/js/story.js"></script>
