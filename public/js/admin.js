@@ -1,5 +1,5 @@
-// const backendBaseUrl = 'https://comp4537-project-backend-qnf6.onrender.com/COMP4537_project';
-const backendBaseUrl = 'http://localhost:5000/COMP4537_project';
+const backendBaseUrl = 'https://comp4537-project-backend-qnf6.onrender.com/COMP4537_project';
+// const backendBaseUrl = 'http://localhost:5000/COMP4537_project'; // Localhost
 
 // 1. Check authentication via cookie (no direct token access)
 fetch(`${backendBaseUrl}/api/users/verify-auth`, {

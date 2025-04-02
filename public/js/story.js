@@ -1,5 +1,5 @@
-// const backendBaseUrl = 'https://comp4537-project-backend-qnf6.onrender.com/COMP4537_project';
-const backendBaseUrl = 'http://localhost:5000/COMP4537_project';
+const backendBaseUrl = 'https://comp4537-project-backend-qnf6.onrender.com/COMP4537_project';
+// const backendBaseUrl = 'http://localhost:5000/COMP4537_project'; // Localhost
 const datalimit = 20;
 
 // Load stories on page load
