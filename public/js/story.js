@@ -185,7 +185,9 @@ async function deleteStory(e) {
             credentials: 'include'
         });
 
-        if (response.status !== 204) throw new Error('Deletion failed');
+        if (response.status !== 204) {
+            throw new Error('Deletion failed');
+        }
         card.remove(); // Remove from UI
     } catch (error) {
         alert(error.message);
