@@ -5,6 +5,9 @@ const datalimit = 20;
 // Load stories on page load
 document.addEventListener('DOMContentLoaded', fetchStories);
 
+// Display API usage on page load
+document.addEventListener('DOMContentLoaded', displayApiUsage);
+
 // Check for unauthorized access
 const unauthorizedMessage = document.getElementById('unauthorizedMessage');
 if (unauthorizedMessage) {
@@ -59,6 +62,7 @@ if (storyForm) {
             `;
 
             fetchStories(); // Refresh list
+            displayApiUsage(); // Refresh API usage
 
         } catch (error) {
             console.error('Error:', error);
@@ -195,19 +199,21 @@ async function deleteStory(e) {
 }
 
 // Display the amount of API usage of the logged-in user
-fetch(`${backendBaseUrl}/api/stories/usage`, {
-    credentials: 'include'
-})
-    .then(response => response.json())
-    .then(data => {
-        console.log(data.used);
-        document.getElementById('api-usage').innerHTML = `
-        <div class="usage-meter">
-            <div class="usage-bar" style="width: ${(data.used / datalimit) * 100}%"></div>
-        </div>
-        <p>${data.used}/${datalimit} API calls used</p>
-    `;
+async function displayApiUsage() {
+    fetch(`${backendBaseUrl}/api/stories/usage`, {
+        credentials: 'include'
     })
-    .catch(error => {
-        console.error('Failed to load usage:', error);
-    });
+        .then(response => response.json())
+        .then(data => {
+            console.log(data.used);
+            document.getElementById('api-usage').innerHTML = `
+            <div class="usage-meter">
+                <div class="usage-bar" style="width: ${(data.used / datalimit) * 100}%"></div>
+            </div>
+            <p>${data.used}/${datalimit} API calls used</p>
+        `;
+        })
+        .catch(error => {
+            console.error('Failed to load usage:', error);
+        });
+}
